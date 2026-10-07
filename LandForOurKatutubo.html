@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1.0,
+             maximum-scale=1.0,
+             user-scalable=no"
+>
+
+<title>SEIZED BY THE FILIPINO PEOPLE</title>
+
+<style>
+
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #000;
+    color: #fff;
+
+    overflow: hidden;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+}
+
+
+
+.viewport {
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+
+.screen {
+
+    position: relative;
+
+    width: min(100vw, 177.7777778vh);
+
+    aspect-ratio: 16 / 9;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 25% 50%,
+            rgba(255,255,255,0.025),
+            transparent 60%
+        ),
+        #000;
+
+    container-type: inline-size;
+}
+
+
+.main-title {
+
+    position: absolute;
+
+    top: 5.1%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 2.2cqw;
+
+    font-weight: 900;
+
+    letter-spacing: 0.12em;
+
+    line-height: 1.1;
+
+    color: #fff;
+
+    z-index: 8;
+
+    text-shadow:
+        0 0 0.5cqw rgba(255,255,255,0.12);
+}
+
+
+.main-title .red {
+
+    color: #ff0000;
+
+    text-shadow:
+        0 0 0.5cqw rgba(255,0,0,0.25);
+}
+
+
+.message-container {
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 64%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 6.5%;
+    padding-right: 4%;
+
+    z-index: 2;
+}
+
+
+.message-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 20%;
+
+    width: 82%;
+    height: 60%;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(255,255,255,0.028),
+            rgba(255,255,255,0.012) 45%,
+            transparent 100%
+        );
+
+    filter: blur(1.3cqw);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.dict {
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.text {
+
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 0.91cqw;
+
+    line-height: 1.42;
+
+    letter-spacing: 0.035em;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 0.35cqw rgba(255,255,255,0.06);
+}
+
+
+.text div {
+
+    margin: 0 0 1.05cqw 0;
+}
+
+
+.red {
+
+    color: #ff0000;
+
+    text-shadow:
+        0 0 0.4cqw rgba(255,0,0,0.25);
+}
+
+
+
+.highlight {
+
+    color: #fff;
+
+    font-weight: 900;
+
+    letter-spacing: 0.09em;
+
+    margin-top: 1.4cqw !important;
+
+    text-shadow:
+        0 0 0.5cqw rgba(255,255,255,0.12);
+}
+
+
+
+.image-container {
+
+    position: absolute;
+
+    right: 4%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 31%;
+    height: 65%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+}
+
+
+
+.image-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 85%;
+    height: 85%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.045),
+            transparent 65%
+        );
+
+    filter: blur(2cqw);
+
+    z-index: -1;
+}
+
+
+
+.image-container img {
+
+    width: 88%;
+    height: 88%;
+
+    object-fit: contain;
+
+    display: block;
+
+    opacity: 0.72;
+
+    filter:
+        grayscale(100%)
+        contrast(115%)
+        brightness(78%);
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse,
+            #000 52%,
+            transparent 84%
+        );
+
+    mask-image:
+        radial-gradient(
+            ellipse,
+            #000 52%,
+            transparent 84%
+        );
+}
+
+
+
+
+.separator {
+
+    position: absolute;
+
+    left: 64%;
+
+    top: 20%;
+    bottom: 20%;
+
+    width: 0.05cqw;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,0.08),
+            transparent
+        );
+
+    z-index: 3;
+}
+
+
+
+.footer {
+
+    position: absolute;
+
+    bottom: 4.5%;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 0.95cqw;
+
+    letter-spacing: 0.18em;
+
+    opacity: 0.35;
+
+    z-index: 10;
+}
+
+
+ 
+
+.screen::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.018) 0px,
+            rgba(255,255,255,0.018) 1px,
+            transparent 1px,
+            transparent 0.22cqw
+        );
+}
+
+
+.screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 19;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 45%,
+            rgba(0,0,0,0.48) 100%
+        );
+}
+
+
+@media (max-width: 420px) {
+
+    .text {
+
+        font-size: 0.88cqw;
+
+    }
+
+    .main-title {
+
+        font-size: 2.05cqw;
+
+    }
+
+}
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .text {
+
+        font-size: 0.9cqw;
+
+    }
+
+    .main-title {
+
+        top: 4.5%;
+
+        font-size: 2.1cqw;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="viewport">
+
+
+    <div class="screen">
+
+
+        <div class="main-title">
+
+            SEIZED BY THE
+            <span class="red">FILIPINO</span>
+            PEOPLE
+
+        </div>
+
+        <div class="message-container">
+
+            <div class="dict">
+
+                <div class="text">
+
+
+                    <div>
+                        DENR, STOP TREATING
+                        INDIGENOUS PEOPLE LIKE THEY'RE
+                        TRESPASSING IN THEIR OWN DAMN HOMES.
+                    </div>
+
+
+                    <div>
+
+                        HOW IS IT OKAY FOR OUR INDIGENOUS PEOPLE TO HAVE
+                        FIGHT JUST TO STAY ON THE LAND THEY OWNED?
+                        THEIR ANCESTORS HAVE CALLED IT HOME
+                        FOR GENERATIONS.
+
+                    </div>
+
+
+                    <div>
+
+                        THAT'S NOT JUST "PROPERTY."
+
+                        THAT'S THEIR HISTORY!
+
+                    </div>
+
+
+                    <div>
+
+                        Y'ALL ARE SUPPOSED TO PROTECT
+                        THE LAND AND THE PEOPLE WHO'VE
+                        BEEN PROTECTING OUR NATURE FOR GENERATIONS,
+
+                        NOT MAKE THEM FEEL LIKE OUTSIDERS
+                        ON THEIR OWN ANCESTRAL DOMAIN.
+
+                    </div>
+
+
+                    <div>
+
+                        LISTEN TO THE COMMUNITIES.
+
+                        RESPECT THEIR RIGHTS.
+
+                        STOP PUSHING INDIGENOUS PEOPLE
+                        OUT OF THEIR OWN HOMES.
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        WE ARE WATCHING.
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="separator"></div>
+
+
+        <div class="image-container">
+
+            <img
+                src="https://gw.cdn.ngo/media/images/Defenders_Report_-_GettyImages_Activist_Rally.width-1600.jpg"
+                alt="Activist Rally"
+            >
+
+        </div>
+
+
+        <div class="footer">
+
+            SPECIAL GREETINGS:
+            EXTRAV4GANZA | W127
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
